@@ -1,0 +1,43 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Movie Roulette";
+}
+
+<h2>Movie Roulette</h2>
+
+<label for="genreSelect">Select a Genre:</label>
+<select id="genreSelect">
+    <option value="action">Action</option>
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+</select>
+
+<button id="spinButton">Spin</button>
+
+<div id="movieResult"></div>
+
+@section Scripts {
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.js"
+			  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			  crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {        
+            $("#spinButton").click(function () {
+                const genre = $("#genreSelect").val();
+                $.get("/Movie/GetRandomMovie?genre=" + genre, function (data) {
+                    if (data.error) {
+                        $("#movieResult").html("<p>" + data.error + "</p>");
+                    } else {
+                        $("#movieResult").html(`
+                            <h3>${data.title}</h3>
+                            <img src="${data.poster}" width="200" />
+                            <p>${data.plot}</p>
+                            <strong>IMDb Rating: ${data.imdbRating}</strong>
+                        `);
+                    }
+                });
+            });
+        });
+    </script>
+}
