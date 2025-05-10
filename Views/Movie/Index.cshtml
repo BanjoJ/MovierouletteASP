@@ -25,20 +25,27 @@
         $(document).ready(function () {        
             $("#spinButton").click(function () {
                 const genre = $("#genreSelect").val();
-                $.get(`/Movie/GetRandomMovie?genre=${genre}`, function (data) {
-                    if (data.error) {
-                        $("#movieResult").html("<p>" + data.error + "</p>");
-                    } else {
-                        $("#movieResult").fadeOut(800, function() {  // Fade out current content
-                            $(this).html(`
-                                <h3>${data.title}</h3>
-                                <img src="${data.poster}" class="poster" width="200" />
-                                <p>${data.plot}</p>
-                                <strong>IMDb Rating: ${data.imdbRating}</strong>
-                            `);
-                            $(this).fadeIn(800);  // Fade in new content
+                $("#movieResult").fadeOut(300, function () {
+                    $.get(`/Movie/GetRandomMovies?genre=${genre}`, function (data) {
+                        if (data.error) {
+                            $("#movieResult").html(`<p>${data.error}</p>`).fadeIn();
+                            return;
+                        }
+
+                        let html = "";
+                        data.forEach(movie => {
+                            html += `
+                                <div class="movie-card">
+                                    <h3>${movie.title}</h3>
+                                    <img class="poster" src="${movie.poster}" width="200" />
+                                    <p>${movie.plot}</p>
+                                    <strong>IMDb Rating: ${movie.imdbRating}</strong>
+                                </div>
+                            `;
                         });
-                    }
+
+                        $("#movieResult").html(html).fadeIn();
+                    });
                 });
             });
         });

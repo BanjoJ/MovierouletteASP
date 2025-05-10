@@ -42,3 +42,20 @@ body {
   transform: scale(1.5);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+#movieResult {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.movie-card {
+  border: 2px solid #555;
+  padding: 10px;
+  border-radius: 8px;
+  width: 220px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
