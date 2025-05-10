@@ -32,7 +32,7 @@
                         $("#movieResult").fadeOut(800, function() {  // Fade out current content
                             $(this).html(`
                                 <h3>${data.title}</h3>
-                                <img src="${data.poster}" width="200" />
+                                <img src="${data.poster}" class="poster" width="200" />
                                 <p>${data.plot}</p>
                                 <strong>IMDb Rating: ${data.imdbRating}</strong>
                             `);
