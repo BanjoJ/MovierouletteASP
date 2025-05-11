@@ -18,6 +18,11 @@ html {
 }
 
 body {
+  background-image: url('/images/background.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
   margin-bottom: 60px;
 }
 
@@ -71,4 +76,6 @@ body {
 
 .movie-card:hover .movie-details {
   max-height: 1000px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
