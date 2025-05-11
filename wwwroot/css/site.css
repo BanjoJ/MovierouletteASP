@@ -71,11 +71,15 @@ body {
 .movie-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s, background-color 0.4s ease;
+  background-color: transparent;
+  border-radius: 10px;
 }
 
 .movie-card:hover .movie-details {
   max-height: 1000px;
+  opacity: 1;
   background-color: #ffffff;
   border-radius: 10px;
 }
