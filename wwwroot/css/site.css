@@ -83,3 +83,16 @@ body {
   background-color: #ffffff;
   border-radius: 10px;
 }
+
+.movie-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  gap: 10px;
+}
