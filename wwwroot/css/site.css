@@ -31,17 +31,18 @@ body {
 }
 
 .poster {
-  border: 4px solid #5cc048;
+  /*border: 4px solid #5cc048;
   border-radius: 8px;
   padding: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+  width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/*
 .poster:hover {
   transform: scale(1.5);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+}*/
 
 #movieResult {
   display: flex;
@@ -52,10 +53,22 @@ body {
 }
 
 .movie-card {
+  /*
   border: 2px solid #555;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 8px;*/
   width: 220px;
-  background-color: #f8f8f8;
+  /*background-color: #ffffff;*/
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.movie-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.movie-card:hover .movie-details {
+  max-height: 1000px;
 }
