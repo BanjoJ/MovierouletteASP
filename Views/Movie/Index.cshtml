@@ -14,6 +14,11 @@
     <button id="spinButton">Spin</button>
 </div>
 
+<div id="loading">
+    <img src="~/images/loading.gif"/>
+</div>
+
+
 <div id="movieResult"></div>
 
 @section Scripts {
@@ -25,6 +30,7 @@
         $(document).ready(function () {        
             $("#spinButton").click(function () {
                 const genre = $("#genreSelect").val();
+                $("#loading").show();
                 $("#movieResult").fadeOut(300, function () {
                     $.get(`/Movie/GetRandomMovies?genre=${genre}`, function (data) {
                         if (data.error) {
@@ -45,7 +51,7 @@
                                 </div>
                             `;
                         });
-
+                        $("#loading").hide();
                         $("#movieResult").html(html).fadeIn();
                     });
                 });

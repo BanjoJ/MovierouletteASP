@@ -118,7 +118,7 @@ body {
 .movie-controls select {
   font-size: 1rem;
   color: white;
-  background-color: transparent;
+  background-color: black;
   margin: 5px 0;
   border-radius: 5px;
   position: relative;
@@ -141,4 +141,14 @@ body {
 #spinButton:hover {
   background-color: #449c36;
   transform: scale(1.05);
+}
+
+#loading {
+  display: none;
+  text-align: center;
+  margin-top: 175px;
+}
+
+#loading img {
+  width: 80px;
 }
