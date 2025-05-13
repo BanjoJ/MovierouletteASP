@@ -1,0 +1,1 @@
+a bare-bones movie roulette made using OMDb API, it selects 3 random movies based on "genres" but actually searches for titles since the API doesn't support searching by genre. The site then shows 3 movie posters which can be interacted with see a plot summary and IMDb rating.
