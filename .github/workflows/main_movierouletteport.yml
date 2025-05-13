@@ -65,4 +65,8 @@ jobs:
           app-name: 'MovieRouletteport'
           slot-name: 'Production'
           package: .
+
+      - name: Azure Login
+
+        uses: Azure/login@v2.3.0
           
