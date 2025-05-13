@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieRoulette.Models;
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Linq;
+
 
 namespace MovieRoulette.Controllers
 {
